@@ -6,6 +6,7 @@ import SecondaryMenuDatePicker from './SecondaryMenuDatePicker';
 import SecondaryMenuSelector from './SecondaryMenuSelector';
 import { BookingContext } from '../context/BookingContext';
 import SecondaryMenuSingleDatePicker from './SecondaryMenuSingleDatePicker';
+import SecondaryMenuExtended from './SecondaryMenuExtended';
 
 function SecondaryMenu() {
   const { trip } = useContext(BookingContext);
@@ -24,11 +25,8 @@ function SecondaryMenu() {
         <SwapHorizIcon />
       </Button>
       <SecondaryMenuSelector placeholder="To?" label="To" />
-      {trip === 'One-Way' ? (
-        <SecondaryMenuSingleDatePicker />
-      ) : (
-        <SecondaryMenuDatePicker />
-      )}
+      {trip === 'One-Way' && <SecondaryMenuSingleDatePicker />}
+      {trip === 'Round-trip' && <SecondaryMenuDatePicker />}
 
       <Button
         variant="contained"
@@ -36,6 +34,13 @@ function SecondaryMenu() {
       >
         <SearchIcon />
       </Button>
+      {trip === 'Multi-city' && (
+        <>
+          <SecondaryMenuExtended />
+          <SecondaryMenuExtended />
+          <SecondaryMenuExtended />
+        </>
+      )}
     </Box>
   );
 }
