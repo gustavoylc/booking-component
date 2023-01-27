@@ -35,10 +35,13 @@ function SecondaryMenuSelector({ placeholder, label }) {
       }}
       renderInput={(params) => (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <FlightIcon />
           <TextField
             {...params}
-            label={label}
+            label={
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <FlightIcon /> {label}
+              </Box>
+            }
             placeholder={placeholder}
             sx={{
               backgroundColor: grey[200],

@@ -4,7 +4,7 @@ import CustomizedMenu from './CustomizedMenu';
 import { flightTypes, travelClass } from '../services/dataMenu';
 
 function PrimaryMenu() {
-  const [trip, setTrip] = useState('One-Way');
+  const [trip, setTrip] = useState('Round-trip');
   const [tripClass, setTripClass] = useState('Economy');
 
   const handleChange = (event) => {
