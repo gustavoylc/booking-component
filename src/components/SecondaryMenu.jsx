@@ -21,7 +21,10 @@ function SecondaryMenu() {
       </Button>
       <SecondaryMenuSelector placeholder="To?" label="To" />
       <SecondaryMenuDatePicker />
-      <Button>
+      <Button
+        variant="contained"
+        sx={{ background: 'linear-gradient(135deg,#ff690f 0%,#e8381b 100%)' }}
+      >
         <SearchIcon />
       </Button>
     </Box>

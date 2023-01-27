@@ -5,6 +5,7 @@ import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import FlightIcon from '@mui/icons-material/Flight';
 import { Box } from '@mui/material';
+import { grey } from '@mui/material/colors';
 import { countries } from '../services/dataMenu';
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -29,11 +30,20 @@ function SecondaryMenuSelector({ placeholder, label }) {
           {option.city}
         </li>
       )}
-      style={{ width: 300 }}
+      style={{
+        width: 300,
+      }}
       renderInput={(params) => (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <FlightIcon />
-          <TextField {...params} label={label} placeholder={placeholder} />
+          <TextField
+            {...params}
+            label={label}
+            placeholder={placeholder}
+            sx={{
+              backgroundColor: grey[200],
+            }}
+          />
         </Box>
       )}
     />

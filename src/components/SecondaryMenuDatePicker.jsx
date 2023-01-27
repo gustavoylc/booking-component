@@ -4,6 +4,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers-pro';
 import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import { useState } from 'react';
+import { grey } from '@mui/material/colors';
 
 function SecondaryMenuDatePicker() {
   const [value, setValue] = useState([null, null]);
@@ -20,9 +21,19 @@ function SecondaryMenuDatePicker() {
         }}
         renderInput={(startProps, endProps) => (
           <>
-            <TextField {...startProps} />
+            <TextField
+              {...startProps}
+              sx={{
+                backgroundColor: grey[200],
+              }}
+            />
             <Box sx={{ mx: 2 }}> to </Box>
-            <TextField {...endProps} />
+            <TextField
+              {...endProps}
+              sx={{
+                backgroundColor: grey[200],
+              }}
+            />
           </>
         )}
       />
