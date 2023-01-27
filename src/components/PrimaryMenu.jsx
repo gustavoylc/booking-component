@@ -1,10 +1,11 @@
 import { Box, FormControl, MenuItem, Select } from '@mui/material';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import CustomizedMenu from './CustomizedMenu';
 import { flightTypes, travelClass } from '../services/dataMenu';
+import { BookingContext } from '../context/BookingContext';
 
 function PrimaryMenu() {
-  const [trip, setTrip] = useState('Round-trip');
+  const { trip, setTrip } = useContext(BookingContext);
   const [tripClass, setTripClass] = useState('Economy');
 
   const handleChange = (event) => {

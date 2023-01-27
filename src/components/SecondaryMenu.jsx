@@ -1,10 +1,14 @@
+import { useContext } from 'react';
 import { Box, Button } from '@mui/material';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import SearchIcon from '@mui/icons-material/Search';
 import SecondaryMenuDatePicker from './SecondaryMenuDatePicker';
 import SecondaryMenuSelector from './SecondaryMenuSelector';
+import { BookingContext } from '../context/BookingContext';
+import SecondaryMenuSingleDatePicker from './SecondaryMenuSingleDatePicker';
 
 function SecondaryMenu() {
+  const { trip } = useContext(BookingContext);
   return (
     <Box
       sx={{
@@ -20,7 +24,12 @@ function SecondaryMenu() {
         <SwapHorizIcon />
       </Button>
       <SecondaryMenuSelector placeholder="To?" label="To" />
-      <SecondaryMenuDatePicker />
+      {trip === 'One-Way' ? (
+        <SecondaryMenuSingleDatePicker />
+      ) : (
+        <SecondaryMenuDatePicker />
+      )}
+
       <Button
         variant="contained"
         sx={{ background: 'linear-gradient(135deg,#ff690f 0%,#e8381b 100%)' }}
