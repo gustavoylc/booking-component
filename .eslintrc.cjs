@@ -22,5 +22,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/jsx-no-constructed-context-values': 'off',
+    'react-hooks/exhaustive-deps': 'off',
   },
 };
