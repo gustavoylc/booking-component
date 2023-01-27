@@ -19,7 +19,10 @@ export default function CustomizedMenu() {
   };
 
   const handleDecrease = (passenger) => {
-    if (passenger.value === 0) {
+    if (
+      passenger.value === 0 ||
+      (passenger.category === 'Adults' && passenger.value === 1)
+    ) {
       return;
     }
     const categoryIndex = passengers.findIndex(
@@ -80,6 +83,7 @@ export default function CustomizedMenu() {
         aria-expanded={open ? 'true' : undefined}
         variant="outlined"
         disableElevation
+        sx={{ width: 150 }}
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
       >
@@ -96,7 +100,7 @@ export default function CustomizedMenu() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem disableRipple>
           <Box
             sx={{
               display: 'flex',
