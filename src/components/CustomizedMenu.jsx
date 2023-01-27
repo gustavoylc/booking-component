@@ -19,15 +19,25 @@ export default function CustomizedMenu() {
   };
 
   const handleDecrease = (passenger) => {
+    const hasPassenger = passengers.filter((person) => person.value === 1);
+
     if (
-      passenger.value === 0 ||
-      (passenger.category === 'Adults' && passenger.value === 1)
+      hasPassenger.length === 2 &&
+      passenger.value === 1 &&
+      hasPassenger.some((value) => value.category === 'Children') &&
+      passenger.category !== 'Children'
     ) {
       return;
     }
+
+    if (passenger.value === 0 || hasPassenger.length === 1) {
+      return;
+    }
+
     const categoryIndex = passengers.findIndex(
       (searchPassenger) => searchPassenger.category === passenger.category
     );
+
     setPassengers((prev) => {
       const newValue = prev[categoryIndex].value - 1;
       const newTravelerCategory = {
