@@ -13,6 +13,7 @@ function PrimaryMenu() {
   const handleChangeTripClass = (event) => {
     setTripClass(event.target.value);
   };
+
   return (
     <Box
       sx={{
@@ -21,6 +22,7 @@ function PrimaryMenu() {
         flexDirection: { xs: 'column', md: 'row' },
         flexWrap: 'wrap',
         justifyContent: { xs: 'center', md: 'start' },
+        alignItems: 'center',
       }}
     >
       <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>

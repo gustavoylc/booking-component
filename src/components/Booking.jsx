@@ -6,8 +6,8 @@ function Booking() {
   return (
     <Box
       sx={{
-        mt: 5,
-        px: { xs: 3, sm: 5 },
+        marginY: 5,
+        px: { xs: 2, sm: 5 },
         display: 'flex',
         flexDirection: 'column',
         gap: 3,
